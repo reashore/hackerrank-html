@@ -1,2 +1,1 @@
-declare const result: HTMLElement;
-declare function handleButtonClick(event: Event): void;
+declare function handleButtonClick(event: any): void;

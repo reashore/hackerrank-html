@@ -1,18 +1,9 @@
-const result: HTMLElement = document.getElementById("res");
-
-function handleButtonClick(event: Event): void {
-// function handleButtonClick(event: MouseEvent): void {
-  // source = event.target || event.srcElement;
-  // event => source => id => innerHTML
-  console.dir(event);
-  // let target: HTMLElement = event.target;
-  let id: string = "btn0";
+function handleButtonClick(event: any): void {
+  console.log(event);
+  let id : string = event.target.id;
   let button: HTMLElement = document.getElementById(id);
-  let foo: Button;
-  console.dir(button);
   const action: string = button.innerHTML;
-  // const action: string = document.getElementById(event.target.id).innerHTML;
-  // const action = document.getElementById(id).innerHTML;
+  const result: HTMLElement = document.getElementById("res");
 
   switch (action) {
     case "0":
@@ -43,8 +34,8 @@ function handleButtonClick(event: Event): void {
         // tslint:disable-next-line: no-eval
         let evaluatedExpression: string = eval(expression).toString(2);
         result.innerHTML = evaluatedExpression;
-      } catch (e) {
-        console.log(e.message);
+      } catch (error) {
+        console.log(error.message);
       }
       break;
 

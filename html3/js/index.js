@@ -1,17 +1,9 @@
-const result = document.getElementById("res");
 function handleButtonClick(event) {
-    // source = event.target || event.srcElement;
-    // event => source => id => innerHTML
-    console.dir(event);
-    //let target: HTMLElement = event.target;
-    let id = "btn0";
-    //let id: string = target.id;
-    console.log(id);
+    console.log(event);
+    let id = event.target.id;
     let button = document.getElementById(id);
-    console.dir(button);
     const action = button.innerHTML;
-    // const action: string = document.getElementById(event.target.id).innerHTML;
-    // const action = document.getElementById(id).innerHTML;
+    const result = document.getElementById("res");
     switch (action) {
         case "0":
         case "1":
@@ -36,8 +28,8 @@ function handleButtonClick(event) {
                 let evaluatedExpression = eval(expression).toString(2);
                 result.innerHTML = evaluatedExpression;
             }
-            catch (e) {
-                console.log(e.message);
+            catch (error) {
+                console.log(error.message);
             }
             break;
         default:
