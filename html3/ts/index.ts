@@ -1,5 +1,4 @@
 function handleButtonClick(event: any): void {
-  console.log(event);
   let id : string = event.target.id;
   let button: HTMLElement = document.getElementById(id);
   const action: string = button.innerHTML;
